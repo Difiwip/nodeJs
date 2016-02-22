@@ -1,0 +1,15 @@
+{
+  "name": "hola_express",
+  "version": "0.0.0",
+  "description": "hola_express",
+  "main": "app.js",
+  "scripts": {
+    "test": "hola"
+  },
+  "author": "nico",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "jade": "^1.11.0"
+  }
+}
