@@ -5,9 +5,9 @@ var Schema = mongoose.Schema;
 mongoose.connect("mongodb://Difiwip:nicolas1@ds011168.mongolab.com:11168/fotos");
 
 var userSchemaJSON = {
-	nick: String,
+	nick: {type: String, required:true,maxleght:[20,"Username muy grande"]},
 	email: String,
-	password: String,
+	password: {type: String,minlength:[8,"El password es muy corto"]},
 };
 
 
