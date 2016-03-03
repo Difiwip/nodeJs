@@ -70,14 +70,13 @@ router.route("/users/:id") // Ahora a la ruta /users pero con una id especifica
     })
 
     .delete(function(req,res){
-      User.remove({_id: req.params.id},function(err){
+      User.remove({_id: req.params.id},function(err){ // Le paso el id q quiero borrar al modelo User
         if(err){
-          res.send(err);
+          res.send(err); // puteada
         }
-        res.send("Usuario eliminado con exito");
+        res.send("Usuario eliminado con exito"); // Usuario borrado
       })
-    })
-
+    });
 
 
 app.use(router);
