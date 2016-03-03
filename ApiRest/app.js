@@ -42,10 +42,14 @@ router.route("/users") // En la ruta /Users abajo declaro los verbos y lo que va
 router.route("/users/:id") // Ahora a la ruta /users pero con una id especifica
 
   .get(function(req,res){ // Igual que el get anterior solo que ahora en findById le paso la id del user que quiero mostrar
+
     User.findById(req.params.id,function(err,user){ // Lo guardo en user
-      if(err) console.log(err);;
-      res.json(user); // lo muestro
-      })
+
+        if(err) console.log(err);;
+        res.json(user); // lo muestro
+
+        });
+
     })
 
     .put(function(req,res){
@@ -63,7 +67,17 @@ router.route("/users/:id") // Ahora a la ruta /users pero con una id especifica
               res.send("Usuario actualizado con exito"); // tanan!!
             });
       });
-    });
+    })
+
+    .delete(function(req,res){
+      User.remove({_id: req.params.id},function(err){
+        if(err){
+          res.send(err);
+        }
+        res.send("Usuario eliminado con exito");
+      })
+    })
+
 
 
 app.use(router);
