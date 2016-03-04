@@ -49,7 +49,7 @@ app.use(bodyParse.urlencoded({extended: true}));
 			if (doc) {
 				res.send("esta bien"); // findOne busca los datos parseados en el login, y si esta el usuario correcto devuelve doc = true
 			}
-			else { // Si devuelve doc = false es que el user o la password esta mal
+			else { // Si devuelve doc = false es que el user o la password esta mal.
 				res.send("esta mal");
 			}
 		});
